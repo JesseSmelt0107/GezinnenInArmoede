@@ -1,0 +1,84 @@
+<style>
+ 
+    
+    .form{
+        margin-top: 20px;
+        margin-left: 50px;
+        
+    }
+    p{
+        margin-bottom: 0px;
+        max-width: 70%;
+        
+        
+    }
+    
+    .keuze {
+        margin-left: 35px;
+    }
+
+</style>
+<script>
+    function Enable() {
+        document.getElementById("submit").disabled = false;
+    }
+</script>
+<div class="row">
+    <div class="col-12">
+        <form method="post" class='form'>
+            
+            <div class=''>
+                <h2>Intermediairs</h2>
+                
+                <p>
+                    U staat bij ons aangemeld als intermediair en voordat wij weer vol van start gaan met de aanmelding voor 2020, willen
+                    wij u vragen om aan te geven of u ACTIEF als intermediair betrokken wil blijven. Horen wij niets dan 
+                    zullen wij uw account op zelf afgemeld zet.
+                </p>
+                <div class='fields'>
+                    <div>
+                        <strong>Organisatie</strong>
+                        <br>{$form->getNaamOrganisatie()}<br><br>
+                    </div>
+                    
+                    <div>
+                        <strong>Voornaam</strong>
+                        <br>{$form->getVoornaam()}<br><br>
+                    </div>
+                    
+                    <div>
+                        <strong>Achternaam</strong>
+                        <br>{$form->getAchternaam()}<br><br>
+                    </div>
+                    
+                    <div>
+                        <strong>Email adres</strong>
+                        <br>{$form->getEmail()}<br><br>
+                    </div>
+                    
+                    <div>
+                        <strong>Mobiele nummer</strong>
+                        <br>{$form->getTelNr()}<br><br>
+                    </div>
+                    
+                    <div>
+                        <strong>Referentie code</strong>
+                        <br>{$form->getRefCode()}<br><br>
+                    </div>
+                </div>
+           
+            </div>
+       
+          
+            
+            <div>
+            <h4>Wilt u actief blijven als intermediair?</h4>
+            <input onclick="Enable();" type="radio" id="ja" name="keuze" value="1">
+            <label for="ja">Ja</label><br>
+            <input onclick="Enable();" type="radio" id="nee" name="keuze" value="0">
+            <label for="nee">Nee</label>
+            <br><br><input id='submit' type="submit" disabled='disabled' value="Verzend">
+            </div>
+        </form>
+    </div>
+</div>
